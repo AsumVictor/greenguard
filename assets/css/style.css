@@ -1257,6 +1257,8 @@ main .main-wrapper.demo-06 .team-area .team-wrapper .team-item .team-img {
 
 main .main-wrapper.demo-06 .team-area .team-wrapper .team-item .team-img img {
   width: 100%;
+  height: fit-content;
+  aspect-ratio: 5.7/6;
 }
 
 main .main-wrapper.demo-06 .team-area .team-wrapper .team-item .team-img .social-links {
@@ -1333,6 +1335,15 @@ main .footer p {
 
 main .footer .credit {
   text-align: right;
+}
+
+.apk-btn {
+  padding: 10px 30px 10px 30px;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 800;
+  color: green;
 }
 
 @media (max-width: 767px) {
