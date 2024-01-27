@@ -1,9 +1,9 @@
-import Image from "next/image"
-import ClickPhoto from "@/assets/click-photo.jpg"
-import Processing from "@/assets/processing.jpg"
-import Greenry from "@/assets/happy-greens.jpg"
-import Header from "@/components/header"
-import { siteConfig } from "@/config/site"
+import { MdAnalytics } from "react-icons/md";
+import { FaCamera } from "react-icons/fa";
+import { IoCloudUploadSharp } from "react-icons/io5";
+import Greenry from "@/assets/happy-greens.jpg";
+import Header from "@/components/header";
+import { siteConfig } from "@/config/site";
 
 export default function HowItWorks() {
   return (
@@ -13,60 +13,50 @@ export default function HowItWorks() {
       </div>
       <div className="grid md:grid-cols-3 gap-8 w-full mt-16">
         <div>
-          <div className="h-72 relative">
-            <Image
-              src={ClickPhoto}
-              alt="A person clicking photo of plant"
-              fill
-              className="object-cover rounded-md"
-            />
+          <div className="h-[4cm] relative flex justify-center items-end">
+            <div className="h-[4cm] justify-center flex w-[4cm] rounded-lg items-center bg-white text-[52px] shadow-md text-green-800">
+              <FaCamera />
+            </div>
           </div>
           <div className="py-4 text-center">
             <p>
-              Start by capturing a clear image of a plant leaf that might be
-              showing signs of disease. Ensure that the image is sharp and
-              well-lit. Easily upload the image to the AgroGuard platform using
-              our user-friendly interface.
+              Once you have the Greenguard app installed on your device, launch
+              it and access the feature for capturing images. Position your
+              device's camera to focus on the specific crop leaf you want to
+              test. Ensure that the image is clear and includes relevant details
+              of the leaf's condition.
             </p>
           </div>
         </div>
         <div>
-          <div className="h-72 relative">
-            <Image
-              src={Processing}
-              alt="Computer Processing the instruction"
-              fill
-              className="object-cover rounded-md"
-            />
+          <div className="h-[4cm] relative flex justify-center items-end">
+            <div className="h-[4cm] justify-center flex w-[4cm] rounded-lg items-center bg-white text-[52px] shadow-md text-green-800">
+              <IoCloudUploadSharp />
+            </div>
           </div>
           <div className="py-4 text-center">
             <p>
-              AgroGuard&apos;s advanced AI technology kicks into action. The
-              uploaded image is processed by a sophisticated machine learning
-              model to analyze the visual characteristics of the leaf in the
-              image, comparing them to an extensive database.
+              In the next step, use the Greenguard app's upload option to submit
+              the captured image for analysis. After selecting the upload
+              feature, navigate to the location where you stored the image and
+              choose it for processing. Once the image is uploaded, Greenguard
+              initiates its processing algorithms to analyze the visual data.
             </p>
           </div>
         </div>
         <div>
-          <div className="h-72 relative">
-            <Image
-              src={Greenry}
-              alt="Happy and Green Plants"
-              fill
-              className="object-cover rounded-md"
-            />
+          <div className="h-[4cm] relative flex justify-center items-end">
+            <div className="h-[4cm] justify-center flex w-[4cm] rounded-lg items-center bg-white text-[52px] shadow-md text-green-800">
+              <MdAnalytics />
+            </div>
           </div>
           <div className="py-4 text-center">
             <p>
-              AgroGuard provides you with comprehensive insights. It not only
-              identifies the specific disease affecting your plant but also
-              offers a detailed description of the plant, the disease itself,
-              and recommends effective remedies.
+            In the final step, after the image processing is complete, Greenguard will display the results along with detailed information on the identified issue affecting the crop leaf. The app not only diagnoses the problem but also provides practical guidance on preventive measures and potential remedies.
             </p>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

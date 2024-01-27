@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/site"
 import { Inter } from "next/font/google"
 import { Navbar } from "@/components/navbar"
 import { Toaster } from "@/components/ui/toaster"
-import Footer from "@/components/footer"
 import "./globals.css"
 import QueryWrapper from "@/components/wrapper/query-wrapper"
 
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
     "Radix UI",
     "Shadcn UI",
     "Plant Disease Detection",
-    "AgroGuard",
+    "GreenGuard",
   ],
   creator: "NextGen Coders",
   openGraph: {
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@rahulkarda2002",
+    creator: "@iamasum369",
   },
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -56,8 +55,8 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Rahul Karda",
-      url: "https://agroguard.vercel.app",
+      name: "Asum Victor",
+      url: "https://greenguard.tech",
     },
   ],
   icons: {
@@ -79,7 +78,6 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
             {children}
-            <Footer />
             <Toaster />
           </ThemeProvider>
         </QueryWrapper>

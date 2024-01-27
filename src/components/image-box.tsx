@@ -8,6 +8,7 @@ import Image from "next/image"
 import { useQuery } from "@tanstack/react-query"
 import Result from "@/components/result"
 import { ReloadIcon } from "@radix-ui/react-icons"
+import { IoCloudUploadSharp } from "react-icons/io5"
 
 interface FormData {
   images: (string | ArrayBuffer | null)[]
@@ -25,8 +26,8 @@ export function ImageBox() {
     setImageFile(e.target.files[0] ?? null)
     toast({
       variant: "success",
-      title: "Image Uploaded",
-      description: `${e.target.files[0].name} Uploaded Successfully`,
+      title: "Crop Image Uploaded",
+      description: `Your Image has Uploaded Successfully`,
     })
     setImageURL(URL.createObjectURL(e.target.files[0]))
   }
@@ -78,7 +79,7 @@ export function ImageBox() {
                 <Image src={imageURL} alt="Image" fill className="rounded-lg" />
               ) : (
                 <div className="flex flex-col gap-2 p-4 justify-center items-center">
-                  <LeafSVG />
+                  <IoCloudUploadSharp size={44}/>
                   <p className="text-center">Upload Plant Image Here</p>
                 </div>
               )}
@@ -96,7 +97,7 @@ export function ImageBox() {
           <div className="mt-4">
             {imageFile === null ? (
               <Button disabled className="select-none">
-                Add Image to Proceed
+                Analyze Image
               </Button>
             ) : (
               <div className="flex flex-col justify-center gap-4 items-center">

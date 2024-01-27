@@ -38,7 +38,7 @@ export default function Introduction() {
           className="hidden md:block"
         />
       </div> */}
-      <ScrollDown />
+     
     </section>
   )
 }

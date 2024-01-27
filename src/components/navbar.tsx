@@ -14,14 +14,12 @@ export function Navbar() {
         <ul className="flex gap-4">
           {/* TODO: Add Effects */}
           <li className="cursor-pointer hover:underline">
-            <Link href="/home">Home</Link>
+            <Link href="/home">Analyse</Link>
           </li>
-          <li className="cursor-pointer hover:underline">
-            <Link href="/about">About</Link>
-          </li>
+         
         </ul>
       </div>
-      <ThemeToggle />
+      
     </nav>
   )
 }
