@@ -28,7 +28,7 @@ export default function Team() {
       </div>
       <div className=" mt-10 justify-center items-center gap-5 flex">
         {team_members.map((m) => (
-          <div className=" w-[6cm] py-1  flex flex-col justify-center items-center">
+          <div key={m.name} className=" w-[6cm] py-1  flex flex-col justify-center items-center">
             <Image
               src={m.image}
               alt={`${m.name} image`}

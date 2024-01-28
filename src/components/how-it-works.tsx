@@ -21,9 +21,9 @@ export default function HowItWorks() {
             <p>
               Once you have the Greenguard app installed on your device, launch
               it and access the feature for capturing images. Position your
-              device's camera to focus on the specific crop leaf you want to
+              device&apos;s camera to focus on the specific crop leaf you want to
               test. Ensure that the image is clear and includes relevant details
-              of the leaf's condition.
+              of the leaf&apos;s condition.
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function HowItWorks() {
           </div>
           <div className="py-4 text-center">
             <p>
-              In the next step, use the Greenguard app's upload option to submit
+              In the next step, use the Greenguard app&apos;s upload option to submit
               the captured image for analysis. After selecting the upload
               feature, navigate to the location where you stored the image and
               choose it for processing. Once the image is uploaded, Greenguard
