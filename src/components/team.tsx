@@ -26,7 +26,7 @@ export default function Team() {
       <div>
         <Header heading={`Meet The Team`} />
       </div>
-      <div className=" mt-10 justify-center items-center gap-5 flex">
+      <div className=" mt-10 flex-col md:flex-row justify-center items-center gap-5 flex">
         {team_members.map((m) => (
           <div key={m.name} className=" w-[6cm] py-1  flex flex-col justify-center items-center">
             <Image
