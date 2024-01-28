@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 import QueryWrapper from "@/components/wrapper/query-wrapper"
+import Footer from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -78,6 +79,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
             {children}
+            <Footer />
             <Toaster />
           </ThemeProvider>
         </QueryWrapper>

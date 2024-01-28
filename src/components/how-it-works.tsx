@@ -1,7 +1,6 @@
 import { MdAnalytics } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { IoCloudUploadSharp } from "react-icons/io5";
-import Greenry from "@/assets/happy-greens.jpg";
 import Header from "@/components/header";
 import { siteConfig } from "@/config/site";
 
