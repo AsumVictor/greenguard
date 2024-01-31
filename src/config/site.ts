@@ -8,6 +8,8 @@ export const siteConfig = {
     twitter: "https://twitter.com/iamasum369",
     github: "https://github.com/AsumVictor/greenguard",
   },
+  author: 'Asum Victor',
+  
 }
 
 export type SiteConfig = typeof siteConfig
