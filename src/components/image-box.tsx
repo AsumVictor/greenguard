@@ -66,7 +66,8 @@ export function ImageBox() {
       formData.push(bodyData);
     };
 
-    await refetch();
+    let result = await refetch();
+    console.log(result)
   }
 
   return (
