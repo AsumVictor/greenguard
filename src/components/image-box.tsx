@@ -1,35 +1,35 @@
 // Component for dragging and dropping images which will be sent to ML Model for detection
-"use client"
-import LeafSVG from "@/components/assets/Leaf"
-import { Button } from "@/components/ui/button"
-import { ChangeEvent, FormEvent, useState } from "react"
-import { useToast } from "@/components/ui/use-toast"
-import Image from "next/image"
-import { useQuery } from "@tanstack/react-query"
-import Result from "@/components/result"
-import { ReloadIcon } from "@radix-ui/react-icons"
-import { IoCloudUploadSharp } from "react-icons/io5"
+"use client";
+import { Button } from "@/components/ui/button";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import Image from "next/image";
+import { useQuery } from "@tanstack/react-query";
+import Result from "@/components/result";
+import { ReloadIcon } from "@radix-ui/react-icons";
+import { IoCloudUploadSharp } from "react-icons/io5";
 
 interface FormData {
-  images: (string | ArrayBuffer | null)[]
-  similar_images: boolean
+  images: (string | ArrayBuffer | null)[];
+  similar_images: boolean;
 }
 
 export function ImageBox() {
-  const [imageFile, setImageFile] = useState<File | null>(null)
-  const [formData, setFormData] = useState<FormData[]>([])
-  const [imageURL, setImageURL] = useState<string>()
-  const { toast } = useToast()
+  const API_KEY: any = process.env.NEXT_PUBLIC_PLANT_ID_API_KEY;
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [formData, setFormData] = useState<FormData[]>([]);
+  const [imageURL, setImageURL] = useState<string>();
+  const { toast } = useToast();
 
   function onImageUpload(e: ChangeEvent<HTMLInputElement>) {
-    if (!e.target.files || !e.target.files[0]) return
-    setImageFile(e.target.files[0] ?? null)
+    if (!e.target.files || !e.target.files[0]) return;
+    setImageFile(e.target.files[0] ?? null);
     toast({
       variant: "success",
       title: "Crop Image Uploaded",
       description: `Your Image has Uploaded Successfully`,
-    })
-    setImageURL(URL.createObjectURL(e.target.files[0]))
+    });
+    setImageURL(URL.createObjectURL(e.target.files[0]));
   }
 
   const { isInitialLoading, error, data, refetch } = useQuery({
@@ -41,32 +41,32 @@ export function ImageBox() {
         {
           method: "POST",
           headers: {
-            "Api-Key": "8ZedI194ofrrbIG5cDrJkcHKAZjaE8CVmfh5FThNt1KfTnTAlB",
+            "Api-Key": API_KEY,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData[0]),
         }
       ).then((res) => res.json()),
-  })
+  });
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    if (!imageFile) return
+    e.preventDefault();
+    if (!imageFile) return;
 
-    let reader = new FileReader()
+    let reader = new FileReader();
 
     // Converting Image to Base64 string
-    reader.readAsDataURL(imageFile)
+    reader.readAsDataURL(imageFile);
 
     reader.onload = function () {
       const bodyData = {
         images: [reader.result],
         similar_images: true,
-      }
-      formData.push(bodyData)
-    }
+      };
+      formData.push(bodyData);
+    };
 
-    await refetch()
+    await refetch();
   }
 
   return (
@@ -79,7 +79,7 @@ export function ImageBox() {
                 <Image src={imageURL} alt="Image" fill className="rounded-lg" />
               ) : (
                 <div className="flex flex-col gap-2 p-4 justify-center items-center">
-                  <IoCloudUploadSharp size={44}/>
+                  <IoCloudUploadSharp size={44} />
                   <p className="text-center">Upload Plant Image Here</p>
                 </div>
               )}
@@ -116,5 +116,5 @@ export function ImageBox() {
       </form>
       {data ? <Result data={data} /> : ""}
     </section>
-  )
+  );
 }

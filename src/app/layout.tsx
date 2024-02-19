@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Plant Disease Detection",
     "GreenGuard",
   ],
-  creator: "NextGen Coders",
+  creator: "Asum Victor",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
     },
   ],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 }
 

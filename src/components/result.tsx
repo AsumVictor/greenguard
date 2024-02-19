@@ -1,8 +1,5 @@
 import { Prediction } from "@/lib/types"
 
-// For development purpose
-import { sampleData } from "@/lib/sample-data"
-
 interface ResultProps {
   data: Prediction
 }

@@ -1,4 +1,3 @@
-import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { siteConfig } from "@/config/site"
 import Link from "next/link"
 
