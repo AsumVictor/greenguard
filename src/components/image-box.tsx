@@ -16,6 +16,7 @@ interface FormData {
 
 export function ImageBox() {
   const API_KEY: any = process.env.NEXT_PUBLIC_PLANT_ID_API_KEY;
+  console.log(process.env.NODE_ENV)
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [formData, setFormData] = useState<FormData[]>([]);
   const [imageURL, setImageURL] = useState<string>();
